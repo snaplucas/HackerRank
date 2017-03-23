@@ -7,7 +7,7 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 
-public class warmup {
+public class Warmup {
 
     @Test
     public void staircase() {
@@ -37,8 +37,6 @@ public class warmup {
         long[] maiores = Arrays.copyOfRange(numeros, 1, numeros.length);
         long[] menores = Arrays.copyOfRange(numeros, 0, numeros.length - 1);
         System.out.print(Arrays.stream(menores).sum() + " " + Arrays.stream(maiores).sum());
-
-
     }
 
     @Test
