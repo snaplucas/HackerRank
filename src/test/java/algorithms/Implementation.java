@@ -62,18 +62,43 @@ public class Implementation {
 
         for (int appleFall : apple) {
             int place = a + appleFall;
-            if(place >= s && place <= t){
+            if (place >= s && place <= t) {
                 appleCount++;
             }
         }
-        for(int orangeFall : orange){
+        for (int orangeFall : orange) {
             int place = b + orangeFall;
-            if(place >= s && place <= t){
+            if (place >= s && place <= t) {
                 orangeCount++;
             }
         }
 
         System.out.println(appleCount);
         System.out.println(orangeCount);
+    }
+
+    @Test
+    public void kangoroo() {
+        int k1 = 0;
+        int v1 = 3;
+        int k2 = 4;
+        int v2 = 2;
+
+        boolean sucess = false;
+
+        if (k2 > k1 && v2 > v1) {
+            System.out.println("NO");
+        } else {
+            for (int i = 0; i < 10000; i++) {
+                k1 += v1;
+                k2 += v2;
+                if (k1 == k2) {
+                    sucess = true;
+                    break;
+                }
+            }
+            System.out.println(sucess ? "YES" : "NO");
+        }
+
     }
 }
