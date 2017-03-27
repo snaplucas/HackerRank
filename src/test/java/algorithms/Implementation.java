@@ -2,9 +2,7 @@ package algorithms;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Implementation {
 
@@ -99,6 +97,44 @@ public class Implementation {
             }
             System.out.println(sucess ? "YES" : "NO");
         }
+    }
 
+    @Test
+    public void betweenTwoSets() {
+        int n = 3;
+        int m = 2;
+        List<Integer> setA = Arrays.asList(3, 9, 6);
+
+        int[] a = new int[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = setA.get(i);
+        }
+        int[] b = new int[m];
+        List<Integer> setB = Arrays.asList(36, 72);
+        for (int j = 0; j < m; j++) {
+            b[j] = setB.get(j);
+        }
+
+        int max = Arrays.stream(b).max().getAsInt();
+        Set<Integer> set = new HashSet<>();
+
+        boolean flag;
+
+        for (int i = 1; i < max + 1; i++) {
+            flag = true;
+            for (int anA : a) {
+                if(!flag) continue;
+                for (int aB : b) {
+                    if (i % anA == 0 && aB % i == 0) {
+                        set.add(i);
+                    } else {
+                        set.remove(i);
+                        flag = false;
+                        break;
+                    }
+                }
+            }
+        }
+        System.out.println(set.size());
     }
 }
