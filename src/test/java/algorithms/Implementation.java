@@ -123,7 +123,7 @@ public class Implementation {
         for (int i = 1; i < max + 1; i++) {
             flag = true;
             for (int anA : a) {
-                if(!flag) continue;
+                if (!flag) continue;
                 for (int aB : b) {
                     if (i % anA == 0 && aB % i == 0) {
                         set.add(i);
@@ -136,5 +136,28 @@ public class Implementation {
             }
         }
         System.out.println(set.size());
+    }
+
+    @Test
+    public void divisibleSumPairs() {
+        int n = 6;
+        int k = 3;
+        List<Integer> list = Arrays.asList(1, 3, 2, 6, 1, 2);
+        int a[] = new int[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = list.get(i);
+        }
+
+        int count = 0;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if ((a[i] + a[j]) % k == 0) {
+                    count++;
+                }
+            }
+        }
+
+        System.out.println(count);
     }
 }
