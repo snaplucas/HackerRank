@@ -3,6 +3,7 @@ package algorithms;
 import org.junit.Test;
 
 import java.util.*;
+import java.util.Map.Entry;
 
 public class Implementation {
 
@@ -188,5 +189,26 @@ public class Implementation {
         }
 
         System.out.println(highestCount + " " + lowestCount);
+    }
+
+    @Test
+    public void migratoryBirds() {
+        int n = 6;
+        List<Integer> list = Arrays.asList(1, 4, 4, 4, 5, 3);
+        Integer[] types = new Integer[n];
+        for (int types_i = 0; types_i < n; types_i++) {
+            types[types_i] = list.get(types_i);
+        }
+
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < n; i++) {
+            Integer count = map.get(types[i]);
+            map.put(types[i], count != null ? count + 1 : 0);
+        }
+
+        Entry<Integer, Integer> entry = Collections.max(map.entrySet(), Comparator.comparing(Entry::getValue));
+
+        System.out.println(entry.getKey());
     }
 }
