@@ -201,14 +201,12 @@ public class Implementation {
         }
 
         Map<Integer, Integer> map = new HashMap<>();
-
-        for (int i = 0; i < n; i++) {
-            Integer count = map.get(types[i]);
-            map.put(types[i], count != null ? count + 1 : 0);
+        for (int type : types) {
+            Integer count = map.get(type);
+            map.put(type, count != null ? ++count : 0);
         }
 
         Entry<Integer, Integer> entry = Collections.max(map.entrySet(), Comparator.comparing(Entry::getValue));
-
         System.out.println(entry.getKey());
     }
 }
