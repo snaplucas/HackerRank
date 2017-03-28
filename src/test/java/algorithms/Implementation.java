@@ -160,4 +160,33 @@ public class Implementation {
 
         System.out.println(count);
     }
+
+    @Test
+    public void breakingTheRecords() {
+        int n = 9;
+        List<Integer> list = Arrays.asList(10, 5, 20, 20, 4, 5, 2, 25, 1);
+        int[] score = new int[n];
+        for (int score_i = 0; score_i < n; score_i++) {
+            score[score_i] = list.get(score_i);
+        }
+
+        int highestCount = 0;
+        int lowestCount = 0;
+
+        int high = score[0];
+        int low = score[0];
+
+        for (int i = 0; i < n - 1; i++) {
+            if (score[i + 1] > high) {
+                high = score[i + 1];
+                highestCount++;
+            }
+            if (score[i + 1] < low) {
+                low = score[i + 1];
+                lowestCount++;
+            }
+        }
+
+        System.out.println(highestCount + " " + lowestCount);
+    }
 }
