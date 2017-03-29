@@ -209,4 +209,22 @@ public class Implementation {
         Entry<Integer, Integer> entry = Collections.max(map.entrySet(), Comparator.comparing(Entry::getValue));
         System.out.println(entry.getKey());
     }
+
+    @Test
+    public void bonAppetit() {
+        int n = 4;
+        int k = 1;
+        List<Integer> itemList = Arrays.asList(3, 10, 2, 9);
+        int b = 12;
+
+        int[] items = new int[n];
+        for (int i = 0; i < n; i++) {
+            items[i] = itemList.get(i);
+        }
+
+        int soma = Arrays.stream(items).sum();
+        soma = soma - items[k];
+        int diff = b - (soma / 2);
+        System.out.println(diff == 0 ? "Bon Appetit" : diff);
+    }
 }
