@@ -227,4 +227,28 @@ public class Implementation {
         int diff = b - (soma / 2);
         System.out.println(diff == 0 ? "Bon Appetit" : diff);
     }
+
+    @Test
+    public void sockMerchant() {
+        int n = 9;
+        int c[] = new int[n];
+
+        List<Integer> sockList = Arrays.asList(10, 20, 20, 10, 10, 30, 50, 10, 20);
+        for (int i = 0; i < n; i++) {
+            c[i] = sockList.get(i);
+        }
+
+        Map<Integer, Integer> map = new HashMap<>();
+        int total = 0;
+        for (int sock : c) {
+            Integer count = map.get(sock);
+            map.put(sock, count != null ? count + 1 : 1);
+        }
+
+
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            total += entry.getValue() / 2;
+        }
+        System.out.println(total);
+    }
 }
