@@ -245,10 +245,17 @@ public class Implementation {
             map.put(sock, count != null ? count + 1 : 1);
         }
 
-
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
             total += entry.getValue() / 2;
         }
         System.out.println(total);
+    }
+
+    @Test
+    public void drawingBook() {
+        int n = 5;
+        int p = 4;
+
+        System.out.println(Math.min(p / 2, n / 2 - p / 2));
     }
 }
