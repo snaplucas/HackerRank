@@ -258,4 +258,31 @@ public class Implementation {
 
         System.out.println(Math.min(p / 2, n / 2 - p / 2));
     }
+
+    @Test
+    public void countingValleys() {
+        int n = 12;
+        String s = "DDUUDDUDUUUD";
+        //2
+
+//        int n = 10;
+//        String s = "UDUUUDUDDD";
+        // 0
+
+        int down = 0;
+        int count = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (s.charAt(i) == 'D') {
+                down++;
+            } else {
+                down--;
+            }
+            if (down == 0) {
+                count++;
+            }
+        }
+
+        System.out.println(count);
+    }
 }
