@@ -263,14 +263,10 @@ public class Implementation {
     public void countingValleys() {
         int n = 12;
         String s = "DDUUDDUDUUUD";
-        //2
-
-//        int n = 10;
-//        String s = "UDUUUDUDDD";
-        // 0
 
         int down = 0;
         int count = 0;
+        boolean goingDown = false;
 
         for (int i = 0; i < n; i++) {
             if (s.charAt(i) == 'D') {
@@ -278,11 +274,14 @@ public class Implementation {
             } else {
                 down--;
             }
-            if (down == 0) {
+            if (down > 0) {
+                goingDown = true;
+            }
+            if (down == 0 && goingDown) {
                 count++;
+                goingDown = false;
             }
         }
-
         System.out.println(count);
     }
 }
