@@ -306,4 +306,35 @@ public class Implementation {
         }
         System.out.println(count);
     }
+
+    @Test
+    public void eletronicsShop() {
+        int s = 10;
+        int n = 2;
+        int m = 3;
+
+        List<Integer> keyboardList = Arrays.asList(3, 1);
+
+        int[] keyboards = new int[n];
+        for (int i = 0; i < n; i++) {
+            keyboards[i] = keyboardList.get(i);
+        }
+
+        List<Integer> pendriveList = Arrays.asList(5, 2, 8);
+        int[] pendrives = new int[m];
+        for (int i = 0; i < m; i++) {
+            pendrives[i] = pendriveList.get(i);
+        }
+
+        int spent = 0;
+        for (int key : keyboards) {
+            for (int pen : pendrives) {
+                int total = key + pen;
+                if (total > spent && total <= s) {
+                    spent = total;
+                }
+            }
+        }
+        System.out.println(spent > 0 ? spent : "-1");
+    }
 }
