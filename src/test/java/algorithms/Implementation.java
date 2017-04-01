@@ -284,4 +284,26 @@ public class Implementation {
         }
         System.out.println(count);
     }
+
+    @Test
+    public void countingVallyesV2() {
+        int n = 10;
+        String s = "UDUUUDUDDD";
+
+        int level = 0;
+        int count = 0;
+
+        for (int i = 0; i < n; i++) {
+            char c = s.charAt(i);
+            if (level == -1 && c == 'U') {
+                count++;
+            }
+            if (c == 'U') {
+                level++;
+            } else {
+                level--;
+            }
+        }
+        System.out.println(count);
+    }
 }
