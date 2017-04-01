@@ -3,6 +3,7 @@ package algorithms;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -88,6 +89,21 @@ public class Warmup {
             output += aux + ":";
         }
         return posMidDay ? output.replace("PM:", "") : output.replace("AM:", "");
+    }
+
+    @Test
+    public void birthdayCakeCandles() {
+        int n = 4;
+        int height[] = new int[n];
+
+        List<Integer> arrayList = Arrays.asList(3, 2, 1, 3);
+        for (int height_i = 0; height_i < n; height_i++) {
+            height[height_i] = arrayList.get(height_i);
+        }
+
+        int max = Arrays.stream(height).max().getAsInt();
+        long total = Arrays.stream(height).filter(a -> a == max).count();
+        System.out.println(total);
     }
 
 }
