@@ -337,4 +337,30 @@ public class Implementation {
         }
         System.out.println(spent > 0 ? spent : "-1");
     }
+
+    @Test
+    public void catsAndAMouse() {
+        int q = 3;
+
+        List<Integer> arrayX = Arrays.asList(1, 1, 2);
+        List<Integer> arrayY = Arrays.asList(2, 3, 1);
+        List<Integer> arrayZ = Arrays.asList(3, 2, 3);
+
+
+        for (int a0 = 0; a0 < q; a0++) {
+            int x = arrayX.get(a0);
+            int y = arrayY.get(a0);
+            int z = arrayZ.get(a0);
+
+            String winner;
+            int catA = Math.abs(z - x);
+            int catB = Math.abs(z - y);
+            if (catA == catB) {
+                winner = "Mouse C";
+            } else {
+                winner = catA < catB ? "Cat A" : "Cat B";
+            }
+            System.out.println(winner);
+        }
+    }
 }
