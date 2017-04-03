@@ -41,20 +41,9 @@ public class Implementation {
         int t = 11;
         int a = 5;
         int b = 15;
-        int m = 3;
-        int n = 2;
-        int[] apple = new int[m];
-        List<Integer> appleList = Arrays.asList(-2, 2, 1);
 
-        for (int i = 0; i < m; i++) {
-            apple[i] = appleList.get(i);
-        }
-
-        int[] orange = new int[n];
-        List<Integer> orangeList = Arrays.asList(5, -6);
-        for (int j = 0; j < n; j++) {
-            orange[j] = orangeList.get(j);
-        }
+        int[] apple = {-2, 2, 1};
+        int[] orange = {5, -6};
 
         int appleCount = 0;
         int orangeCount = 0;
@@ -104,17 +93,9 @@ public class Implementation {
     public void betweenTwoSets() {
         int n = 3;
         int m = 2;
-        List<Integer> setA = Arrays.asList(3, 9, 6);
 
-        int[] a = new int[n];
-        for (int i = 0; i < n; i++) {
-            a[i] = setA.get(i);
-        }
-        int[] b = new int[m];
-        List<Integer> setB = Arrays.asList(36, 72);
-        for (int j = 0; j < m; j++) {
-            b[j] = setB.get(j);
-        }
+        int[] a = {3, 9, 6};
+        int[] b = {36, 72};
 
         int max = Arrays.stream(b).max().getAsInt();
         Set<Integer> set = new HashSet<>();
@@ -143,12 +124,7 @@ public class Implementation {
     public void divisibleSumPairs() {
         int n = 6;
         int k = 3;
-        List<Integer> list = Arrays.asList(1, 3, 2, 6, 1, 2);
-        int a[] = new int[n];
-        for (int i = 0; i < n; i++) {
-            a[i] = list.get(i);
-        }
-
+        int a[] = {1, 3, 2, 6, 1, 2};
         int count = 0;
 
         for (int i = 0; i < n; i++) {
@@ -165,11 +141,7 @@ public class Implementation {
     @Test
     public void breakingTheRecords() {
         int n = 9;
-        List<Integer> list = Arrays.asList(10, 5, 20, 20, 4, 5, 2, 25, 1);
-        int[] score = new int[n];
-        for (int score_i = 0; score_i < n; score_i++) {
-            score[score_i] = list.get(score_i);
-        }
+        int[] score = {10, 5, 20, 20, 4, 5, 2, 25, 1};
 
         int highestCount = 0;
         int lowestCount = 0;
@@ -193,12 +165,7 @@ public class Implementation {
 
     @Test
     public void migratoryBirds() {
-        int n = 6;
-        List<Integer> list = Arrays.asList(1, 4, 4, 4, 5, 3);
-        Integer[] types = new Integer[n];
-        for (int types_i = 0; types_i < n; types_i++) {
-            types[types_i] = list.get(types_i);
-        }
+        Integer[] types = {1, 4, 4, 4, 5, 3};
 
         Map<Integer, Integer> map = new HashMap<>();
         for (int type : types) {
@@ -212,15 +179,10 @@ public class Implementation {
 
     @Test
     public void bonAppetit() {
-        int n = 4;
         int k = 1;
-        List<Integer> itemList = Arrays.asList(3, 10, 2, 9);
         int b = 12;
 
-        int[] items = new int[n];
-        for (int i = 0; i < n; i++) {
-            items[i] = itemList.get(i);
-        }
+        int[] items = {3, 10, 2, 9};
 
         int soma = Arrays.stream(items).sum();
         soma = soma - items[k];
@@ -230,13 +192,7 @@ public class Implementation {
 
     @Test
     public void sockMerchant() {
-        int n = 9;
-        int c[] = new int[n];
-
-        List<Integer> sockList = Arrays.asList(10, 20, 20, 10, 10, 30, 50, 10, 20);
-        for (int i = 0; i < n; i++) {
-            c[i] = sockList.get(i);
-        }
+        int c[] = {10, 20, 20, 10, 10, 30, 50, 10, 20};
 
         Map<Integer, Integer> map = new HashMap<>();
         int total = 0;
@@ -310,21 +266,9 @@ public class Implementation {
     @Test
     public void eletronicsShop() {
         int s = 10;
-        int n = 2;
-        int m = 3;
 
-        List<Integer> keyboardList = Arrays.asList(3, 1);
-
-        int[] keyboards = new int[n];
-        for (int i = 0; i < n; i++) {
-            keyboards[i] = keyboardList.get(i);
-        }
-
-        List<Integer> pendriveList = Arrays.asList(5, 2, 8);
-        int[] pendrives = new int[m];
-        for (int i = 0; i < m; i++) {
-            pendrives[i] = pendriveList.get(i);
-        }
+        int[] keyboards = {3, 1};
+        int[] pendrives = {5, 2, 8};
 
         int spent = 0;
         for (int key : keyboards) {
@@ -346,7 +290,6 @@ public class Implementation {
         List<Integer> arrayY = Arrays.asList(2, 3, 1);
         List<Integer> arrayZ = Arrays.asList(3, 2, 3);
 
-
         for (int a0 = 0; a0 < q; a0++) {
             int x = arrayX.get(a0);
             int y = arrayY.get(a0);
@@ -362,5 +305,12 @@ public class Implementation {
             }
             System.out.println(winner);
         }
+    }
+
+    @Test
+    public void magicSquareForming() {
+        int[][] matrix = {{4, 9, 2}, {3, 5, 7}, {8, 1, 5}};
+
+        System.out.println(matrix[0][0]);
     }
 }
