@@ -313,4 +313,11 @@ public class Implementation {
 
         System.out.println(matrix[0][0]);
     }
+
+    @Test
+    public void pickingNumbers() {
+        int n = 6;
+        int[] a = {4, 6, 5, 3, 3, 1};
+
+    }
 }
