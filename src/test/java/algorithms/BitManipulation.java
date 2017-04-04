@@ -3,7 +3,9 @@ package algorithms;
 import org.junit.Test;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class BitManipulation {
 
@@ -23,5 +25,20 @@ public class BitManipulation {
                 .findFirst()
                 .orElse(null));
 
+    }
+
+    @Test
+    public void lonelyIntegerV2(){
+        int[] a = {0, 0, 1, 2, 1,};
+
+        Set<Integer> numbers = new HashSet<>();
+        for (int number : a) {
+            if (numbers.contains(number)) {
+                numbers.remove(number);
+            } else {
+                numbers.add(number);
+            }
+        }
+        System.out.println(numbers.iterator().next());
     }
 }
