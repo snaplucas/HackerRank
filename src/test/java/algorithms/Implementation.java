@@ -318,6 +318,17 @@ public class Implementation {
     public void pickingNumbers() {
         int n = 6;
         int[] a = {4, 6, 5, 3, 3, 1};
+        int[] array = new int[100];
 
+        for (int i = 0; i < n; i++) {
+            array[a[i]]++;
+        }
+        int max = 0, temp;
+        for (int i = 0; i < 99; i++) {
+            temp = array[i] + array[i + 1];
+            max = temp > max ? temp : max;
+        }
+
+        System.out.println(max);
     }
 }
