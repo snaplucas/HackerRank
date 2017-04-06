@@ -308,13 +308,6 @@ public class Implementation {
     }
 
     @Test
-    public void magicSquareForming() {
-        int[][] matrix = {{4, 9, 2}, {3, 5, 7}, {8, 1, 5}};
-
-        System.out.println(matrix[0][0]);
-    }
-
-    @Test
     public void pickingNumbers() {
         int n = 6;
         int[] a = {4, 6, 5, 3, 3, 1};
@@ -330,5 +323,29 @@ public class Implementation {
         }
 
         System.out.println(max);
+    }
+
+    @Test
+    public void birthdayChocolate() {
+        int[] s = {2, 5, 1, 3, 4, 4, 3, 5, 1, 1, 2, 1, 4, 1, 3, 3, 4, 2, 1};
+        int d = 18;
+        int m = 7;
+
+        int result = getWays(s, d, m);
+        System.out.println(result);
+    }
+
+    private int getWays(int[] squares, int d, int m) {
+        int count = 0;
+        for (int i = 0; i < squares.length; i++) {
+            int sum = squares[i];
+            for (int j = i + 1; j < i + m; j++) {
+                if (j < squares.length) {
+                    sum += squares[j];
+                }
+            }
+            count = sum == d ? ++count : count;
+        }
+        return count;
     }
 }
