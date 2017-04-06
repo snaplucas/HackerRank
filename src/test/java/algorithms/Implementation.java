@@ -348,4 +348,16 @@ public class Implementation {
         }
         return count;
     }
+
+    @Test
+    public void utopianTree() {
+        int[] ciclos = {0, 1, 4};
+        for (int c : ciclos) {
+            int altura = 1;
+            for (int i = 0; i < c; i++) {
+                altura = i % 2 == 0 ? altura * 2 : altura + 1;
+            }
+            System.out.println(altura);
+        }
+    }
 }
