@@ -46,4 +46,17 @@ public class Strings {
         System.out.println(!teste.isEmpty() ? teste : "Empty String");
     }
 
+    @Test
+    public void superReducedStringV2() {
+        String s = "aaabccddd";
+
+        for (int i = 0; i < s.length() - 1; i++) {
+            if (s.charAt(i) == s.charAt(i + 1)) {
+                s = s.replace(s.substring(i, i + 2), "");
+                i = -1;
+            }
+        }
+        System.out.println(!s.isEmpty() ? s : "Empty String");
+    }
+
 }
