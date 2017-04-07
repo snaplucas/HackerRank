@@ -375,4 +375,17 @@ public class Implementation {
         System.out.println(count);
     }
 
+    @Test
+    public void designerPdfViewer() {
+        int[] heights = {6,5,7,3,6,7,3,4,4,2,3,7,1,3,7,4,6,1,2,4,3,3,1,1,3,5};
+        String word = "zbkkfhwplj";
+        int max = 0;
+        for (int i = 0; i < word.length(); i++) {
+            char c = word.charAt(i);
+            int temp = (int) c - 97;
+            max = heights[temp] > max ? heights[temp] : max;
+        }
+        System.out.println(max * word.length());
+    }
+
 }
