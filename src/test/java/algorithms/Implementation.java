@@ -360,4 +360,19 @@ public class Implementation {
             System.out.println(altura);
         }
     }
+
+    @Test
+    public void theHurdleRace() {
+        int k = 4;
+        int[] hurdles = {1, 6, 3, 5, 2};
+        int count = 0;
+        for (int h : hurdles) {
+            while (h > k) {
+                count++;
+                k++;
+            }
+        }
+        System.out.println(count);
+    }
+
 }
