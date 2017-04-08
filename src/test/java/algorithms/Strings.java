@@ -59,4 +59,23 @@ public class Strings {
         System.out.println(!s.isEmpty() ? s : "Empty String");
     }
 
+    @Test
+    public void marsExploration() {
+        String s = "SOSSPSSQSSOR";
+
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (i % 2 == 0) {
+                count = s.charAt(i) == 'S' ? count : count + 1;
+            } else {
+                count = s.charAt(i) == 'O' ? count : count + 1;
+            }
+            if (i == 2) {
+                s = s.substring(i + 1, s.length());
+                i = -1;
+            }
+        }
+        System.out.println(count);
+    }
+
 }
