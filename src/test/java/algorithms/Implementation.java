@@ -396,4 +396,31 @@ public class Implementation {
         System.out.println(Arrays.stream(a).filter(b -> b < 0).count() > k ? "YES" : "NO");
     }
 
+    @Test
+    public void beautifulDaysAtTheMovies() {
+        int i = 20;
+        int k = 23;
+        int j = 6;
+
+        int count = 0;
+
+        for (int data = i; data <= k; data++) {
+            int reverse = reverse(data);
+            count = (data - reverse) % j == 0 ? count + 1 : count;
+        }
+
+        System.out.println(count);
+    }
+
+    private int reverse(int x) {
+        int rev = 0;
+        while (x != 0) {
+            rev = rev * 10 + x % 10;
+            x = x / 10;
+        }
+
+        return rev;
+    }
+
+
 }
