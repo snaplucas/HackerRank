@@ -422,5 +422,20 @@ public class Implementation {
         return rev;
     }
 
+    @Test
+    public void viralAdvertising() {
+        int n = 4;
+        int count = 5;
+        int total = 0;
+
+        for (int i = 0; i < n; i++) {
+            int like = count / 2;
+            total += like;
+            count = like * 3;
+        }
+        
+        System.out.println(total);
+    }
+
 
 }
