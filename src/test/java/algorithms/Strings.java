@@ -2,6 +2,11 @@ package algorithms;
 
 import org.junit.Test;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 public class Strings {
 
     @Test
@@ -76,6 +81,40 @@ public class Strings {
             }
         }
         System.out.println(count);
+    }
+
+    @Test
+    public void twoCharacters() {
+        String s = "txnbvnzdvasknhlmcpkbxdvofimsvqbvkswlkrchohwuplfujvlwpxtlcixpajjpaskrnjneelqdbxtiyeianqjqaikbukpicrwpnjvfpzolcredzmfaznnzd";
+
+        Set<Character> characters = new HashSet<>();
+        for (int i = 0; i < s.length(); i++)
+            characters.add(s.charAt(i));
+
+        List<Character> list = characters.stream().collect(Collectors.toList());
+
+        int maxString = 0;
+
+        for (int i = 0; i < list.size(); i++)
+            for (int j = i + 1; j <= list.size() - 1 ; j++) {
+                char c1 = list.get(i);
+                char c2 = list.get(j);
+                String aux = "";
+                for (char c : s.toCharArray())
+                    if (c == c1 || c == c2) aux += c;
+                maxString = checkString(aux) ? aux.length() > maxString ? aux.length() : maxString : maxString;
+            }
+
+            System.out.println(maxString);
+    }
+
+    private boolean checkString(String s) {
+        for (int i = 0; i < s.length() - 1; i++) {
+            if (s.charAt(i) == s.charAt(i + 1)) {
+                return false;
+            }
+        }
+        return true;
     }
 
 }
