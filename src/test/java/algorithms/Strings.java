@@ -2,6 +2,7 @@ package algorithms;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -85,8 +86,7 @@ public class Strings {
 
     @Test
     public void twoCharacters() {
-        String s = "txnbvnzdvasknhlmcpkbxdvofimsvqbvkswlkrchohwuplfujvlwpxtlcix" +
-                "pajjpaskrnjneelqdbxtiyeianqjqaikbukpicrwpnjvfpzolcredzmfaznnzd";
+        String s = "txnbvnzdvasknhlmcpkbxdvofimsvqbvkswlkrchohwuplfujvlwpxtlcix" + "pajjpaskrnjneelqdbxtiyeianqjqaikbukpicrwpnjvfpzolcredzmfaznnzd";
 
         Set<Character> characters = new HashSet<>();
         for (int i = 0; i < s.length(); i++)
@@ -116,6 +116,27 @@ public class Strings {
             }
         }
         return true;
+    }
+
+    @Test
+    public void findDigits() {
+        int n = 1012;
+        int count = 0;
+
+        List<Integer> list = digits(n);
+        for (int number : list) {
+            if (number != 0) count = n % number == 0 ? count + 1 : count;
+        }
+        System.out.println(count);
+    }
+
+    private static List<Integer> digits(int i) {
+        List<Integer> digits = new ArrayList<>();
+        while (i > 0) {
+            digits.add(i % 10);
+            i /= 10;
+        }
+        return digits;
     }
 
 }
