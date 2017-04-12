@@ -96,7 +96,7 @@ public class Strings {
         int maxString = 0;
 
         for (int i = 0; i < list.size(); i++)
-            for (int j = i + 1; j <= list.size() - 1 ; j++) {
+            for (int j = i + 1; j <= list.size() - 1; j++) {
                 char c1 = list.get(i);
                 char c2 = list.get(j);
                 String aux = "";
@@ -105,7 +105,7 @@ public class Strings {
                 maxString = checkString(aux) ? aux.length() > maxString ? aux.length() : maxString : maxString;
             }
 
-            System.out.println(maxString);
+        System.out.println(maxString);
     }
 
     private boolean checkString(String s) {
