@@ -85,7 +85,8 @@ public class Strings {
 
     @Test
     public void twoCharacters() {
-        String s = "txnbvnzdvasknhlmcpkbxdvofimsvqbvkswlkrchohwuplfujvlwpxtlcixpajjpaskrnjneelqdbxtiyeianqjqaikbukpicrwpnjvfpzolcredzmfaznnzd";
+        String s = "txnbvnzdvasknhlmcpkbxdvofimsvqbvkswlkrchohwuplfujvlwpxtlcix" +
+                "pajjpaskrnjneelqdbxtiyeianqjqaikbukpicrwpnjvfpzolcredzmfaznnzd";
 
         Set<Character> characters = new HashSet<>();
         for (int i = 0; i < s.length(); i++)
