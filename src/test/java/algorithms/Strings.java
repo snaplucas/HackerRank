@@ -2,6 +2,7 @@ package algorithms;
 
 import org.junit.Test;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -137,6 +138,17 @@ public class Strings {
             i /= 10;
         }
         return digits;
+    }
+
+    @Test
+    public void extraLongFactorials() {
+        System.out.println(factorial(25));
+
+    }
+
+    private BigInteger factorial(int n) {
+        if (n == 0) return BigInteger.valueOf(1);
+        else return BigInteger.valueOf(n).multiply(factorial(n - 1));
     }
 
 }
