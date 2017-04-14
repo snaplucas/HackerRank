@@ -151,4 +151,20 @@ public class Strings {
         else return BigInteger.valueOf(n).multiply(factorial(n - 1));
     }
 
+    @Test
+    public void saveThePrisoner() {
+        int prisoners = 499999999;
+        int sweets = 999999997;
+        int first = 2;
+        
+        int sweetsToFirst = prisoners - first;
+        sweets = sweets - sweetsToFirst;
+
+        while (sweets > prisoners) {
+            sweets = sweets - prisoners;
+        }
+        int last = sweets < 0 ? Math.abs(sweets) : sweets - 1;
+        System.out.println(last == 0 ? prisoners : last);
+    }
+
 }
