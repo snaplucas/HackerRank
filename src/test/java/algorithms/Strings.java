@@ -191,4 +191,17 @@ public class Strings {
         System.out.println(E);
     }
 
+
+    @Test
+    public void pangran() {
+        String s = "We promptly judged antique ivory buckles for the next prize";
+        s = s.toLowerCase();
+
+        Set<Character> characters = new HashSet<>();
+        for (char c : s.toCharArray()) {
+            characters.add(c);
+        }
+        System.out.println(characters.size() == 27 ? "pangram" : "not pangram");
+    }
+
 }
