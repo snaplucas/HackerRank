@@ -175,4 +175,20 @@ public class Strings {
         }
     }
 
+    @Test
+    public void jumpingOntheClouds() {
+        int E = 100;
+        int n = 8;
+        int k = 2;
+        int[] c = {0, 0, 1, 0, 0, 1, 1, 0};
+
+        int start = 0;
+        do {
+            start += k;
+            E = c[start == n ? 0 : start] == 0 ? E - 1 : E - 3;
+        } while (start < n);
+
+        System.out.println(E);
+    }
+
 }
