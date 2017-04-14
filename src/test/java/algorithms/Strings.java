@@ -3,10 +3,7 @@ package algorithms;
 import org.junit.Test;
 
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Strings {
@@ -156,7 +153,7 @@ public class Strings {
         int prisoners = 499999999;
         int sweets = 999999997;
         int first = 2;
-        
+
         int sweetsToFirst = prisoners - first;
         sweets = sweets - sweetsToFirst;
 
@@ -165,6 +162,17 @@ public class Strings {
         }
         int last = sweets < 0 ? Math.abs(sweets) : sweets - 1;
         System.out.println(last == 0 ? prisoners : last);
+    }
+
+    @Test
+    public void sequenceEquation() {
+        int[] n = {2, 3, 1};
+        List<Integer> list = Arrays.asList(2, 3, 1);
+
+        for (int i = 1; i <= n.length; i++) {
+            int value = list.indexOf(i);
+            System.out.println(list.indexOf(value + 1) + 1);
+        }
     }
 
 }
