@@ -433,9 +433,28 @@ public class Implementation {
             total += like;
             count = like * 3;
         }
-        
+
         System.out.println(total);
     }
 
+    @Test
+    public void circulaArrayRotation() {
+        int n = 3;
+        int[] a = {1, 2, 3};
+        int k = 2;
+        if (k != n) k = k % n;
+
+        List<Integer> initialList = new ArrayList<>();
+        for (int i : a) {
+            initialList.add(i);
+        }
+
+        List<Integer> head = initialList.subList(initialList.size() - k, initialList.size());
+        List<Integer> tail = initialList.subList(0, initialList.size() - k);
+        List<Integer> list = new ArrayList<>();
+        list.addAll(head);
+        list.addAll(tail);
+        System.out.println(list);
+    }
 
 }
