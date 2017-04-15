@@ -2,6 +2,7 @@ package algorithms;
 
 import org.junit.Test;
 
+import java.math.BigInteger;
 import java.util.*;
 import java.util.Map.Entry;
 
@@ -435,6 +436,81 @@ public class Implementation {
         }
 
         System.out.println(total);
+    }
+
+    @Test
+    public void findDigits() {
+        int n = 1012;
+        int count = 0;
+
+        List<Integer> list = digits(n);
+        for (int number : list) {
+            if (number != 0) count = n % number == 0 ? count + 1 : count;
+        }
+        System.out.println(count);
+    }
+
+    private static List<Integer> digits(int i) {
+        List<Integer> digits = new ArrayList<>();
+        while (i > 0) {
+            digits.add(i % 10);
+            i /= 10;
+        }
+        return digits;
+    }
+
+    @Test
+    public void extraLongFactorials() {
+        System.out.println(factorial(25));
+
+    }
+
+    private BigInteger factorial(int n) {
+        if (n == 0) return BigInteger.valueOf(1);
+        else return BigInteger.valueOf(n).multiply(factorial(n - 1));
+    }
+
+    @Test
+    public void saveThePrisoner() {
+        int prisoners = 499999999;
+        int sweets = 999999997;
+        int first = 2;
+
+        int sweetsToFirst = prisoners - first;
+        sweets = sweets - sweetsToFirst;
+
+        while (sweets > prisoners) {
+            sweets = sweets - prisoners;
+        }
+        int last = sweets < 0 ? Math.abs(sweets) : sweets - 1;
+        System.out.println(last == 0 ? prisoners : last);
+    }
+
+    @Test
+    public void sequenceEquation() {
+        int[] n = {2, 3, 1};
+        List<Integer> list = Arrays.asList(2, 3, 1);
+
+        for (int i = 1; i <= n.length; i++) {
+            int value = list.indexOf(i);
+            System.out.println(list.indexOf(value + 1) + 1);
+        }
+    }
+
+    @Test
+    public void jumpingOntheClouds() {
+        int E = 100;
+        int n = 8;
+        int k = 2;
+        int[] c = {0, 0, 1, 0, 0, 1, 1, 0};
+
+        int start = 0;
+        do {
+            start += k;
+            E = c[start == n ? 0 : start] == 0 ? E - 1 : E - 3;
+        } while (start < n);
+
+        System.out.println(E);
     }
 
     @Test
