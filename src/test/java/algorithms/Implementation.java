@@ -546,4 +546,28 @@ public class Implementation {
         System.out.println(n.length - entry.getValue());
     }
 
+    @Test
+    public void repeatedString() {
+        String s = "gfcaaaecbg";
+        int n = 547602;
+        int count = 0;
+
+        for (char c : s.toCharArray()) {
+            if (c != 'a') count++;
+        }
+        if (count == s.length()) {
+            System.out.println(0);
+        } else {
+            long repeticoes = n / s.length();
+            long restante = n - (s.length() * repeticoes);
+            int resto = 0;
+            for (int i = 0; i < restante; i++) {
+                if (s.charAt(i) != 'a') {
+                    resto++;
+                }
+            }
+            System.out.println(n - (count * repeticoes) - resto);
+        }
+    }
+
 }
