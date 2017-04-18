@@ -533,4 +533,17 @@ public class Implementation {
         System.out.println(list);
     }
 
+    @Test
+    public void equalizeTheArray() {
+        int[] n = {3, 3, 2, 1, 3};
+
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i : n) {
+            Integer count = map.get(i);
+            map.put(i, count != null ? count + 1 : 1);
+        }
+        Entry<Integer, Integer> entry = Collections.max(map.entrySet(), Comparator.comparing(Entry::getValue));
+        System.out.println(n.length - entry.getValue());
+    }
+
 }
