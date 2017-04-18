@@ -570,4 +570,25 @@ public class Implementation {
         }
     }
 
+    @Test
+    public void repeatedStringV2() {
+        String s = "gfcaaaecbg";
+        int n = 547602;
+
+        char ch[] = s.toCharArray();
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (ch[i] == 'a') {
+                count++;
+            }
+        }
+        int cnt = 0;
+        for (int i = 0; i < n % s.length(); i++) {
+            if (ch[i] == 'a') {
+                cnt++;
+            }
+        }
+        System.out.println(n / s.length() * count + cnt);
+    }
+
 }
