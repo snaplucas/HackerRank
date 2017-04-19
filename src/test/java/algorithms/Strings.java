@@ -2,8 +2,9 @@ package algorithms;
 
 import org.junit.Test;
 
-import java.math.BigInteger;
-import java.util.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Strings {
@@ -126,6 +127,24 @@ public class Strings {
             characters.add(c);
         }
         System.out.println(characters.size() == 27 ? "pangram" : "not pangram");
+    }
+
+    @Test
+    public void funnyString() {
+        String s = "ivvkx";
+        String r = new StringBuilder(s).reverse().toString();
+
+        int n = s.length();
+        boolean funny = true;
+        for (int i = 1; i < n - 1; i++) {
+            int a = s.charAt(i) - s.charAt(i - 1);
+            int b = r.charAt(i) - r.charAt(i - 1);
+            if (Math.abs(a) != Math.abs(b)) {
+                funny = false;
+                break;
+            }
+        }
+        System.out.println(funny ? "Funny" : "Not Funny");
     }
 
 }
