@@ -602,4 +602,17 @@ public class Implementation {
         }
     }
 
+    @Test
+    public void jumpingOnTheCloudsV1() {
+        int n = 10;
+        int[] c = {0, 0, 1, 0, 0, 0, 0, 1, 0, 0};
+        int count = 0;
+
+        for (int i = 0; i < n - 1; i++) {
+            if (c[i] == 0) i++;
+            count++;
+        }
+        System.out.println(count);
+    }
+
 }
