@@ -147,4 +147,16 @@ public class Strings {
         System.out.println(funny ? "Funny" : "Not Funny");
     }
 
+    @Test
+    public void alternatingCharacters() {
+        String s = "AAABBB";
+        int count = 0;
+
+        for (int i = 0; i < s.length() - 1; i++) {
+            if(s.charAt(i) == s.charAt(i +1))
+                count++;
+        }
+        System.out.println(count);
+    }
+
 }
