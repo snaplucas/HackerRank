@@ -153,10 +153,27 @@ public class Strings {
         int count = 0;
 
         for (int i = 0; i < s.length() - 1; i++) {
-            if(s.charAt(i) == s.charAt(i +1))
-                count++;
+            if (s.charAt(i) == s.charAt(i + 1)) count++;
         }
         System.out.println(count);
+    }
+
+    @Test
+    public void caesarCipher() {
+        String s = "lcfd";
+        int k = 98;
+
+        StringBuilder buf = new StringBuilder(s.length());
+
+        for (char c : s.toCharArray()) {
+            if (c >= 'a' && c <= 'z') {
+                c = (char) ((((c - 'a') + k) % 26) + 'a');
+            } else {
+                c = (char) ((((c - 'A') + k) % 26) + 'A');
+            }
+            buf.append(c);
+        }
+        System.out.println(buf.toString());
     }
 
 }
