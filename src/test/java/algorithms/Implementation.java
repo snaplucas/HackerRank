@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.math.BigInteger;
 import java.util.*;
 import java.util.Map.Entry;
+import java.util.stream.Collectors;
 
 public class Implementation {
 
@@ -613,6 +614,17 @@ public class Implementation {
             count++;
         }
         System.out.println(count);
+    }
+
+    @Test
+    public void cutTheSticks() {
+        Integer[] s = {5, 4, 4, 2, 2, 8};
+        List<Integer> sticks  = Arrays.asList(s);
+        do {
+            int min = sticks.stream().min(Comparator.comparingInt(a -> a)).get();
+            System.out.println(sticks.size());
+            sticks = sticks.stream().map(a -> a - min).filter(b -> b > 0).collect(Collectors.toList());
+        } while (sticks.size() >= 1);
     }
 
 }
