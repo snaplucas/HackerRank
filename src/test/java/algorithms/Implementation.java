@@ -619,12 +619,29 @@ public class Implementation {
     @Test
     public void cutTheSticks() {
         Integer[] s = {5, 4, 4, 2, 2, 8};
-        List<Integer> sticks  = Arrays.asList(s);
+        List<Integer> sticks = Arrays.asList(s);
         do {
             int min = sticks.stream().min(Comparator.comparingInt(a -> a)).get();
             System.out.println(sticks.size());
             sticks = sticks.stream().map(a -> a - min).filter(b -> b > 0).collect(Collectors.toList());
         } while (sticks.size() >= 1);
+    }
+
+    @Test
+    public void minimumDistances() {
+        int n = 2;
+        int[] a = {1,1};
+
+        int min = 1000000;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (a[i] == a[j]) {
+                    min = Math.abs(i - j) < min ? Math.abs(i - j) : min;
+                }
+            }
+        }
+        System.out.println(min == 1000000 ? -1 : min);
     }
 
 }
