@@ -629,8 +629,8 @@ public class Implementation {
 
     @Test
     public void minimumDistances() {
-        int n = 2;
-        int[] a = {1,1};
+        int n = 6;
+        int[] a = {7, 1, 3, 4, 1, 7,};
 
         int min = 1000000;
 
