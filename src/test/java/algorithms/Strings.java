@@ -176,4 +176,12 @@ public class Strings {
         System.out.println(buf.toString());
     }
 
+    @Test
+    public void beautifulBinaryStrig() {
+        String s = "0101010";
+
+        System.out.println((s.length() - s.replaceAll("010", "").length())/3);
+
+    }
+
 }
