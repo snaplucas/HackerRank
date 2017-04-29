@@ -180,8 +180,20 @@ public class Strings {
     public void beautifulBinaryStrig() {
         String s = "0101010";
 
-        System.out.println((s.length() - s.replaceAll("010", "").length())/3);
+        System.out.println((s.length() - s.replaceAll("010", "").length()) / 3);
 
+    }
+
+    @Test
+    public void stringConstruction() {
+        String s = "acacacabcbbccacadcabcbadcbdddbbcbcadbbccadbdaddaaadaddbdbabbaadbcda" +
+                "ccaddccbbcbbaddcabcadbaaddbdaabcdcbabaacbccbbabcccdbdabacccdacbcbabacabcdadcbcdccd";
+
+        Set<Character> hs = new HashSet<>();
+        for (int i = 0; i < s.length(); i++) {
+            hs.add(s.charAt(i));
+        }
+        System.out.println(hs.size());
     }
 
 }
