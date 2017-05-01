@@ -644,4 +644,30 @@ public class Implementation {
         System.out.println(min == 1000000 ? -1 : min);
     }
 
+    @Test
+    public void libraryFine() {
+
+        int d1 = 5;
+        int m1 = 5;
+        int y1 = 2014;
+        int d2 = 23;
+        int m2 = 2;
+        int y2 = 2014;
+
+        if (y1 < y2 || (y1 == y2 && m1 < m2) || (y1 == y2 && m1 == m2 && d1 < d2)) {
+            System.out.println(0);
+        } else {
+            if (y1 > y2) {
+                System.out.println(10000);
+            } else {
+                if (m1 > m2) {
+                    System.out.println(500 * (m1 - m2));
+                } else {
+                    System.out.println(15 * (d1 - d2));
+                }
+            }
+        }
+
+    }
+
 }

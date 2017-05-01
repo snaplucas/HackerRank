@@ -186,8 +186,7 @@ public class Strings {
 
     @Test
     public void stringConstruction() {
-        String s = "acacacabcbbccacadcabcbadcbdddbbcbcadbbccadbdaddaaadaddbdbabbaadbcda" +
-                "ccaddccbbcbbaddcabcadbaaddbdaabcdcbabaacbccbbabcccdbdabacccdacbcbabacabcdadcbcdccd";
+        String s = "acacacabcbbccacadcabcbadcbdddbbcbcadbbccadbdaddaaadaddbdbabbaadbcda";
 
         Set<Character> hs = new HashSet<>();
         for (int i = 0; i < s.length(); i++) {
