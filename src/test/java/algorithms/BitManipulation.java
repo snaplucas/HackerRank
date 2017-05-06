@@ -19,16 +19,12 @@ public class BitManipulation {
             map.put(i, count != null ? count + 1 : 1);
         }
 
-        System.out.println(map.entrySet().stream()
-                .filter(b -> b.getValue() == 1)
-                .map(Map.Entry::getKey)
-                .findFirst()
-                .orElse(null));
+        System.out.println(map.entrySet().stream().filter(b -> b.getValue() == 1).map(Map.Entry::getKey).findFirst().orElse(null));
 
     }
 
     @Test
-    public void lonelyIntegerV2(){
+    public void lonelyIntegerV2() {
         int[] a = {0, 0, 1, 2, 1,};
 
         Set<Integer> numbers = new HashSet<>();
