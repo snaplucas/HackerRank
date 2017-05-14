@@ -18,9 +18,7 @@ public class BitManipulation {
             Integer count = map.get(i);
             map.put(i, count != null ? count + 1 : 1);
         }
-
         System.out.println(map.entrySet().stream().filter(b -> b.getValue() == 1).map(Map.Entry::getKey).findFirst().orElse(null));
-
     }
 
     @Test
