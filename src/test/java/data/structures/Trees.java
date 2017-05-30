@@ -34,6 +34,15 @@ public class Trees {
         postOrder(root.right);
         System.out.print(root.data + " ");
     }
+
+    private void inOrder(Node root) {
+        if (root == null) {
+            return;
+        }
+        inOrder(root.left);
+        System.out.print(root.data + " ");
+        inOrder(root.right);
+    }
 }
 
 class Node {
