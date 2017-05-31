@@ -3,6 +3,8 @@ package data.structures;
 import org.junit.Before;
 import org.junit.Test;
 
+import static java.lang.Integer.max;
+
 public class Trees {
 
     private Node node;
@@ -43,6 +45,14 @@ public class Trees {
         System.out.print(root.data + " ");
         inOrder(root.right);
     }
+
+    private int height(Node root) {
+        if(root == null){
+            return -1;
+        }
+        return max(height(root.left), height(root.right)) +1;
+    }
+
 }
 
 class Node {
