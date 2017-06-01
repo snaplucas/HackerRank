@@ -3,6 +3,9 @@ package data.structures;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 import static java.lang.Integer.max;
 
 public class Trees {
@@ -47,12 +50,24 @@ public class Trees {
     }
 
     private int height(Node root) {
-        if(root == null){
+        if (root == null) {
             return -1;
         }
-        return max(height(root.left), height(root.right)) +1;
+        return max(height(root.left), height(root.right)) + 1;
     }
 
+    private void levelOrder(Node root) {
+        if(root == null) return;
+        Queue<Node> queue = new LinkedList<Node>();
+        queue.add(root);
+
+        while(!queue.isEmpty()){
+            Node node = queue.remove();
+            System.out.print(node.data + " ");
+            if(node.left != null) queue.add(node.left);
+            if(node.right != null) queue.add(node.right);
+        }
+    }
 }
 
 class Node {
