@@ -57,16 +57,27 @@ public class Trees {
     }
 
     private void levelOrder(Node root) {
-        if(root == null) return;
-        Queue<Node> queue = new LinkedList<Node>();
+        if (root == null) return;
+        Queue<Node> queue = new LinkedList<>();
         queue.add(root);
-
-        while(!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             Node node = queue.remove();
             System.out.print(node.data + " ");
-            if(node.left != null) queue.add(node.left);
-            if(node.right != null) queue.add(node.right);
+            if (node.left != null) queue.add(node.left);
+            if (node.right != null) queue.add(node.right);
         }
+    }
+
+    private Node insert(Node root, int value) {
+        if (root == null) {
+            Node node = new Node();
+            node.data = value;
+            node.left = null;
+            node.right = null;
+            root = node;
+        } else if (root.data > value) root.left = insert(root.left, value);
+        else if (root.data < value) root.right = insert(root.right, value);
+        return root;
     }
 }
 
