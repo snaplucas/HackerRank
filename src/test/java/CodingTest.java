@@ -8,10 +8,7 @@ public class CodingTest {
     @Test
     public void foo() {
         int[] myArray = new int[]{90, 10, 70, 30, 20};
-
-//        System.out.println(minimumNumberOfTrips(100, myArray));
-        System.out.println(minimumNumberOfTrips_2(90, myArray));
-
+        System.out.println(minimumNumberOfTrips(90, myArray));
     }
 
     private List<Integer> greatestFlightRangeDrones(Integer numberOfRequiredDrones, List<Drone> drones, List<Integer> inMaintenanceDrones) {
@@ -40,7 +37,7 @@ public class CodingTest {
         }
     }
 
-    private int minimumNumberOfTrips_2(int tripMaxWeight, int[] packagesWeight) {
+    private int minimumNumberOfTrips(int tripMaxWeight, int[] packagesWeight) {
         List<Integer> lista = new ArrayList<>();
         for (int i : packagesWeight) {
             lista.add(i);
