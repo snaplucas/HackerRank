@@ -84,11 +84,11 @@ public class Warmup {
             novasHoras = 0;
         }
         horasMinutos[0] = novasHoras < 10 ? horasMinutos[0] = "0" + novasHoras : String.valueOf(novasHoras);
-        String output = "";
+        StringBuilder output = new StringBuilder();
         for (String aux : horasMinutos) {
-            output += aux + ":";
+            output.append(aux).append(":");
         }
-        return posMidDay ? output.replace("PM:", "") : output.replace("AM:", "");
+        return posMidDay ? output.toString().replace("PM:", "") : output.toString().replace("AM:", "");
     }
 
     @Test

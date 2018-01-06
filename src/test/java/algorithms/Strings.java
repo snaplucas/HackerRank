@@ -2,6 +2,7 @@ package algorithms;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -34,7 +35,7 @@ public class Strings {
 
         boolean stop;
         do {
-            String aux = "";
+            StringBuilder aux = new StringBuilder();
             stop = true;
             int limit = teste.length();
             for (int i = 0; i < limit - 1; i++) {
@@ -43,7 +44,7 @@ public class Strings {
                     stop = false;
                     break;
                 } else {
-                    aux += teste.charAt(i);
+                    aux.append(teste.charAt(i));
                 }
             }
         } while (!stop);
@@ -91,7 +92,7 @@ public class Strings {
         for (int i = 0; i < s.length(); i++)
             characters.add(s.charAt(i));
 
-        List<Character> list = characters.stream().collect(Collectors.toList());
+        List<Character> list = new ArrayList<>(characters);
 
         int maxString = 0;
 
@@ -99,10 +100,10 @@ public class Strings {
             for (int j = i + 1; j <= list.size() - 1; j++) {
                 char c1 = list.get(i);
                 char c2 = list.get(j);
-                String aux = "";
+                StringBuilder aux = new StringBuilder();
                 for (char c : s.toCharArray())
-                    if (c == c1 || c == c2) aux += c;
-                maxString = checkString(aux) ? aux.length() > maxString ? aux.length() : maxString : maxString;
+                    if (c == c1 || c == c2) aux.append(c);
+                maxString = checkString(aux.toString()) ? aux.length() > maxString ? aux.length() : maxString : maxString;
             }
 
         System.out.println(maxString);

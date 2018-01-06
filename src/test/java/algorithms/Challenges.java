@@ -20,7 +20,6 @@ public class Challenges {
         } catch (Exception io) {
             io.printStackTrace();
         }
-
     }
 
 }
