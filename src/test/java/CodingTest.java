@@ -10,10 +10,7 @@ public class CodingTest {
 
     @Test
     public void foo() {
-        int[] myArray = new int[]{80, 10, 90, 20};
-
-        System.out.println(minimumNumberOfTrips(100, myArray));
-        System.out.println(minimumNumberOfTrips_2(100, myArray));
+        System.out.println(minimumNumberOfTrips_2(100, new int[]{80, 80, 20, 10, 85, 70}));
     }
 
     private List<Integer> greatestFlightRangeDrones(Integer numberOfRequiredDrones, List<Drone> drones, List<Integer> inMaintenanceDrones) {
@@ -40,29 +37,6 @@ public class CodingTest {
         public int getFlightRange() {
             return flightRange;
         }
-    }
-
-    private int minimumNumberOfTrips(int tripMaxWeight, int[] packagesWeight) {
-        Arrays.sort(packagesWeight);
-
-        int trips = 0;
-        int packages = 0;
-        int weight = 0;
-
-        for (int i = packagesWeight.length; i > 0; i--) {
-            weight += packagesWeight[i - 1];
-            packages++;
-            if (weight > tripMaxWeight || packages > 1) {
-                trips++;
-                weight = 0;
-                packages = 0;
-            }
-        }
-        if (weight > 0) {
-            trips++;
-        }
-
-        return trips;
     }
 
     private int minimumNumberOfTrips_2(int tripMaxWeight, int[] packagesWeight) {
