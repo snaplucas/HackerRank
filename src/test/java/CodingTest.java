@@ -10,12 +10,14 @@ public class CodingTest {
 
     @Test
     public void foo() {
+        List<Drone> drones = Arrays.asList(new Drone(1, 30), new Drone(2, 60), new Drone(3, 20), new Drone(4, 10), new Drone(5, 15), new Drone(6, 20));
+        System.out.println(greatestFlightRangeDrones(3, drones, Arrays.asList(1, 2)));
         System.out.println(minimumNumberOfTrips_2(100, new int[]{80, 80, 20, 10, 85, 70}));
     }
 
     private List<Integer> greatestFlightRangeDrones(Integer numberOfRequiredDrones, List<Drone> drones, List<Integer> inMaintenanceDrones) {
         return drones.stream() //
-                .filter(x -> inMaintenanceDrones.stream().noneMatch(y -> y != x.id)) //
+                .filter(x -> inMaintenanceDrones.stream().noneMatch(y -> y == x.id)) //
                 .sorted(Comparator.comparing(Drone::getFlightRange).reversed()) //
                 .limit(numberOfRequiredDrones) //
                 .map(y -> y.id).collect(Collectors.toList());
@@ -25,16 +27,12 @@ public class CodingTest {
         private int id;
         private int flightRange;
 
-        public Drone(int id, int flightRange) {
+        Drone(int id, int flightRange) {
             this.id = id;
             this.flightRange = flightRange;
         }
 
-        public int getId() {
-            return id;
-        }
-
-        public int getFlightRange() {
+        int getFlightRange() {
             return flightRange;
         }
     }
