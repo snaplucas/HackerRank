@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.math.BigInteger;
 import java.util.*;
 import java.util.Map.Entry;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Implementation {
@@ -517,14 +518,10 @@ public class Implementation {
     @Test
     public void circulaArrayRotation() {
         int n = 3;
-        int[] a = {1, 2, 3};
         int k = 2;
         if (k != n) k = k % n;
 
-        List<Integer> initialList = new ArrayList<>();
-        for (int i : a) {
-            initialList.add(i);
-        }
+        List<Integer> initialList = Arrays.asList(1,2,3);
 
         List<Integer> head = initialList.subList(initialList.size() - k, initialList.size());
         List<Integer> tail = initialList.subList(0, initialList.size() - k);
@@ -667,7 +664,27 @@ public class Implementation {
                 }
             }
         }
+    }
 
+    @Test
+    public void intersect() {
+        String passoword_1 = "password123";
+        String password_2 = "password456";
+
+        List<Character> list1 = passoword_1.chars().mapToObj(x -> (char) x).collect(Collectors.toList());
+        List<Character> list2 = password_2.chars().mapToObj(x -> (char) x).collect(Collectors.toList());
+
+        List<Character> intersect = list1.stream().filter(list2::contains).collect(Collectors.toList());
+
+        System.out.println(intersect);
+    }
+
+    @Test
+    public void mapValues() {
+        String a = "aaabbbbcc";
+        List<Character> list = a.chars().mapToObj(x -> (char) x).collect(Collectors.toList());
+        Map<Character, Long> result = list.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        System.out.println(result);
     }
 
 }
